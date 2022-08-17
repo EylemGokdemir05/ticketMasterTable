@@ -2,7 +2,7 @@
     <h1>Table Detail</h1>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: "Table Detail"
 }

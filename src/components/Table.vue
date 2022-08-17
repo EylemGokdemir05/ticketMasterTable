@@ -3,10 +3,16 @@
     <PaginationVue />
 </template>
 
-<script>
+<script setup lang="ts">
+import { onMounted, ref } from 'vue';
+import useEvents from '../composables/useEvents';
 import PaginationVue from './Pagination.vue';
-export default {
-    name: "Table",
-    components: {PaginationVue}
-}
+
+const events = ref();
+onMounted(async () => {
+    events.value = await useEvents();
+})
+defineExpose({ 
+    events 
+})
 </script>

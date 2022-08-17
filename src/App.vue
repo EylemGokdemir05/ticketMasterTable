@@ -6,7 +6,7 @@
   <router-view></router-view>
 </template>
 
-<script>
+<script lang="ts">
 import Home from './views/Home.vue';
 import TableDetail from './components/TableDetail.vue';
 
