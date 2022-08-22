@@ -23,7 +23,7 @@
                 <td>{{event._embedded.venues[0].city.name}} - {{event._embedded.venues[0].country.countryCode}}.</td>
                 <td className="detail">
                     <span className="detailLink">
-                         <router-link :to="'/detail/'+event.id">Detail</router-link>
+                        <router-link :to="'/detail/'+event.id">Detail</router-link>
                     </span>
                 </td>
             </tr>
@@ -70,6 +70,34 @@ td {
 .table-img {
     width: 100px;
     height: 100px;
+}
+.detail {
+    position: relative;
+    float: right;
+    margin-top: 34px;
+    background: grey;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform .4s;
+}
+.detailLink {
+    display: block;
+    width: 46px;
+    height: 25px;
+}
+.detailLink a{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: calc(100% - 16px);
+    padding-top: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
 }
 
 </style>
