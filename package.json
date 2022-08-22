@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "test": "vitest"
   },
   "dependencies": {
     "@nuxtjs/composition-api": "^0.33.1",
@@ -15,7 +16,10 @@
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
+    "@testing-library/vue": "^6.6.1",
     "@vue/compiler-sfc": "^3.0.4",
-    "vite": "^2.3.7"
+    "happy-dom": "^6.0.4",
+    "vite": "^2.3.7",
+    "vitest": "^0.22.1"
   }
 }
