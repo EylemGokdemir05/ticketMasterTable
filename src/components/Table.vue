@@ -1,4 +1,6 @@
 <template>
+    <input type="text" placeholder="Search..." v-model="searchQuery"/>
+    <i class="search icon"></i>
     <table>
         <thead>
             <tr>
@@ -32,15 +34,26 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import useEvents from '../composables/useEvents';
 
 const events = ref();
+const searchQuery = ref("");
 onMounted(async () => {
     events.value = await useEvents();
+    console.log('events.value: ',events.value)
 })
+const searchedEvents = computed(() => {
+      return events.value.filter((event:any) => {
+        return (
+          event.name
+            .toLowerCase()
+            .indexOf(searchQuery.value.toLowerCase()) != -1
+        );
+      });
+});
 defineExpose({ 
-    events 
+    events, searchedEvents, searchQuery
 })
 </script>
 
